@@ -1,0 +1,8 @@
+#cloud-config
+users:
+ - name: dokukin
+   groups: sudo
+   shell: /bin/bash
+   sudo: ['ALL=(ALL) NOPASSWD:ALL']
+   ssh-authorized-keys:
+     - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIADxk1+yjv/pDUUH/3traSmJFOeGytUrpDJ5TJ9g5U5j root@dokukin
