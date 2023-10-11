@@ -38,6 +38,11 @@
 ### Сайт
 Создайте две ВМ в разных зонах, установите на них сервер nginx, если его там нет. ОС и содержимое ВМ должно быть идентичным, это будут наши веб-сервера.
 
+
+***nginx утсновлен*** 
+![img](https://github.com/Dokukin1/diplom-sys/blob/main/img/vm1nginx.png)
+![img](https://github.com/Dokukin1/diplom-sys/blob/main/img/vm2nginx.png)
+
 Используйте набор статичных файлов для сайта. Можно переиспользовать сайт из домашнего задания.
 
 Создайте [Target Group](https://cloud.yandex.com/docs/application-load-balancer/concepts/target-group), включите в неё две созданных ВМ.
