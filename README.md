@@ -58,7 +58,6 @@
 ![img](https://github.com/Dokukin1/diplom-sys/blob/main/img/router.jpg)
 Протестируйте сайт
 `curl -v <публичный IP балансера>:80` 
-
 ![img](https://github.com/Dokukin1/diplom-sys/blob/main/img/curl.jpg)
 
 ### Мониторинг
