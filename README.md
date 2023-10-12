@@ -58,7 +58,7 @@
 ![img](https://github.com/Dokukin1/diplom-sys/blob/main/img/router.jpg)
 Протестируйте сайт
 `curl -v <публичный IP балансера>:80` 
-![img](https://github.com/Dokukin1/diplom-sys/blob/main/img/curl.jpg)
+![img](https://github.com/Dokukin1/diplom-sys/blob/main/img/curll.jpg)
 
 ### Мониторинг
 Создайте ВМ, разверните на ней Zabbix. На каждую ВМ установите Zabbix Agent, настройте агенты на отправление метрик в Zabbix. 
