@@ -72,6 +72,42 @@
 Cоздайте ВМ, разверните на ней Elasticsearch. Установите filebeat в ВМ к веб-серверам, настройте на отправку access.log, error.log nginx в Elasticsearch.
 
 Создайте ВМ, разверните на ней Kibana, сконфигурируйте соединение с Elasticsearch.
+![img](https://github.com/Dokukin1/diplom-sys/blob/main/img/elastic.jpg)
+На nginxserver1 и nginxserver2 установлены filebeat.Заходим поочередно на сервера и настраиваем конфиг файл на отправку логов.
+
+Так как одним из заданий была реализация концепции bastion host,то на сервера будем заходить через него. Пример доступа к nginxserver1 и nginxserver2
+```
+ssh dokukin@10.0.1.28
+```
+```
+ssh dokukin@10.0.2.27 
+```
+
+```
+sudo nano /etc/filebeat/filebeat.yml
+```
+
+вставляем ip elastic и ip kibana
+
+```
+sudo nano /etc/filebeat/modules.d/nginx.yml
+```
+ Заменить false на true в блоках error и access
+
+```
+sudo systemctl restart filebeat
+```
+```
+sudo filebeat modules enable nginx
+```
+```
+sudo filebeat setup
+```
+```
+sudo filebeat -e 
+```
+******************************************************************************************************
+
 
 ### Сеть
 Разверните один VPC. Сервера web, Elasticsearch поместите в приватные подсети. Сервера Zabbix, Kibana, application load balancer определите в публичную подсеть.
