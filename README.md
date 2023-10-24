@@ -139,7 +139,7 @@ sudo nano /etc/kibana/kibana.yml
 Настройте ВМ с публичным адресом, в которой будет открыт только один порт — ssh. Настройте все security groups на разрешение входящего ssh из этой security group. Эта вм будет реализовывать концепцию bastion host. Потом можно будет подключаться по ssh ко всем хостам через этот хост.
 ![img](https://github.com/Dokukin1/diplom-sys/blob/main/img/5.jpg)
 
-![img](https://github.com/Dokukin1/diplom-sys/blob/main/img/5.1jpg)
+![img](https://github.com/Dokukin1/diplom-sys/blob/main/img/5.1.jpg)
 
 ### Резервное копирование
 Создайте snapshot дисков всех ВМ. Ограничьте время жизни snaphot в неделю. Сами snaphot настройте на ежедневное копирование.
