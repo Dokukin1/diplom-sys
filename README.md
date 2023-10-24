@@ -108,6 +108,9 @@ sudo filebeat -e
 ```
 ******************************************************************************************************
 
+![img](https://github.com/Dokukin1/diplom-sys/blob/main/img/el1.jpg)
+![img](https://github.com/Dokukin1/diplom-sys/blob/main/img/el2.jpg)
+
 
 ### Сеть
 Разверните один VPC. Сервера web, Elasticsearch поместите в приватные подсети. Сервера Zabbix, Kibana, application load balancer определите в публичную подсеть.
