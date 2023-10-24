@@ -64,6 +64,12 @@
 Создайте ВМ, разверните на ней Zabbix. На каждую ВМ установите Zabbix Agent, настройте агенты на отправление метрик в Zabbix. 
 ![img](https://github.com/Dokukin1/diplom-sys/blob/main/img/zabbix1.jpg)
 
+[http://158.160.104.93:8080/](http://158.160.104.93:8080/)
+
+login: Admin
+
+Pass: zabbix
+
 Настройте дешборды с отображением метрик, минимальный набор — по принципу USE (Utilization, Saturation, Errors) для CPU, RAM, диски, сеть, http запросов к веб-серверам. Добавьте необходимые tresholds на соответствующие графики.
 ![img](https://github.com/Dokukin1/diplom-sys/blob/main/img/zabbix2.png)
 
