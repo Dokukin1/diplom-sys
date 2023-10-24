@@ -1,0 +1,24 @@
+---
+- name: Install Zabbix agent
+  hosts: web_servers
+  become: yes
+
+  tasks:
+    - name: Install required packages
+      apt:
+        name: ["zabbix-agent"]
+        state: present
+
+    - name: Copy Zabbix Agent configuration file
+      copy:
+        src: files/zabbix_agent.conf
+        dest: /etc/zabbix/zabbix_agentd.conf
+        owner: root
+        group: root
+        mode: "0644"
+
+    - name: Start and enable Zabbix Agent service
+      service:
+        name: zabbix-agent
+        state: started
+        enabled: yes
