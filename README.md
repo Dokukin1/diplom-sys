@@ -141,5 +141,7 @@ sudo nano /etc/kibana/kibana.yml
 
 ![img](https://github.com/Dokukin1/diplom-sys/blob/main/img/5.1.jpg)
 
+![img](https://github.com/Dokukin1/diplom-sys/blob/main/img/5.3.jpg)
+
 ### Резервное копирование
 Создайте snapshot дисков всех ВМ. Ограничьте время жизни snaphot в неделю. Сами snaphot настройте на ежедневное копирование.
