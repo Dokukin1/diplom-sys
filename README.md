@@ -111,6 +111,16 @@ sudo filebeat -e
 ![img](https://github.com/Dokukin1/diplom-sys/blob/main/img/el1.jpg)
 ![img](https://github.com/Dokukin1/diplom-sys/blob/main/img/el2.jpg)
 
+Заходим на сервер Kibana,и настраиваем конфиг для подключени к elasticsearch.
+
+```
+sudo nano /etc/kibana/kibana.yml
+```
+
+Вставляем адрес elastic
+    
+[http://51.250.47.37:5601/](http://51.250.47.37:5601/)
+
 
 ### Сеть
 Разверните один VPC. Сервера web, Elasticsearch поместите в приватные подсети. Сервера Zabbix, Kibana, application load balancer определите в публичную подсеть.
