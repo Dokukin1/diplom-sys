@@ -121,6 +121,9 @@ sudo nano /etc/kibana/kibana.yml
     
 [http://158.160.101.2:5601/](http://158.160.101.2:5601/)
 
+![img](https://github.com/Dokukin1/diplom-sys/blob/main/img/kib1.png)
+![img](https://github.com/Dokukin1/diplom-sys/blob/main/img/kib2.png)
+
 
 ### Сеть
 Разверните один VPC. Сервера web, Elasticsearch поместите в приватные подсети. Сервера Zabbix, Kibana, application load balancer определите в публичную подсеть.
