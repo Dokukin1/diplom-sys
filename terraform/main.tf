@@ -95,7 +95,7 @@ resource "yandex_compute_instance" "nginxserver2" {
 }
 
 resource "yandex_compute_instance" "promethmonitor"{
-  name = "promethmonitor"
+  name = "bastion"
   zone = "ru-central1-a"
   resources{
     cores = 4
@@ -121,7 +121,7 @@ resource "yandex_compute_instance" "promethmonitor"{
 
 
 resource "yandex_compute_instance" "grafanamonitor"{
-  name = "grafanamonitor"
+  name = "zabbix"
   zone = "ru-central1-a"
   resources{
   cores = 4
