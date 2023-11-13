@@ -1,8 +1,9 @@
 #cloud-config
+
 users:
- - name: dokukin
-   groups: sudo
-   shell: /bin/bash
-   sudo: ['ALL=(ALL) NOPASSWD:ALL']
-   ssh-authorized-keys:
-     - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIADxk1+yjv/pDUUH/3traSmJFOeGytUrpDJ5TJ9g5U5j root@dokukin
+  - name: dokukin
+    groups: sudo
+    shell: /bin/bash
+    sudo: ['ALL=(ALL) NOPASSWD:ALL']
+    ssh-authorized-keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCaSxqouixvXoeOFp5MPnwsw7bq5tNBdPw+vbrnc+aaz3bGdnYDg6tWdA7AvjqK85TFPwKag+bqe+Jo9NJEYkOiF98XbxQGVXuamB7qVzN+GU/i99ooTTDjAikeMIjQ/Y/2uL7qLk2MK/LT7ZpY5s0M4qbBU6bElvfqx5FT1EuAgBSIjfEZt64aD3jbrKrmUfqqntaDXc8lNuE/F+CzPovT9Yk+T0r+iAzwzo+YfRJTpC2bGzHnacy6a/hQVrbZPBR+/Jy9Ei2xLKzzOtquXmzKw4kwu3KzGWub0dlD1pPgXMrSjHpiv7t+LiVFg/w6lbnahkV+P30fvn65/fO8CSoA3MFvsG04NbGPVJ2tyn6pLPb84FbNyZb0Kuya8z+oc+fD/Kh7s8NHUk0RFzr+CPeUM/6hdSlHkhs4wNjGlzTZocceRdebhXPpddgJG7zU0zlTI8vW9rCNbqLraY4A/9PsnR3S3sgl+4/3pXnUnjDbDyW66TSIyRALWJ1Vkp1yjBc= root@terraform
