@@ -1,6 +1,6 @@
 ---
-- name: Install filebeat
-  hosts: web_servers
+- name: Install elasticsearch
+  hosts: elasticsearch
   become: yes
 
   tasks:
@@ -15,40 +15,30 @@
           - gnupg
         state: present
 
-    - name: Copy filebeat 7.14.1
+    - name: Copy elasticsearch 7.14.1
       copy:
-        src: ./elasticsearch_files/filebeat-7.14.1-amd64.deb
-        dest: /home/dokukin/
+        src: ./elasticsearch_files/elasticsearch-7.14.1-amd64.deb
+        dest: /home/
 
-    - name: Install filebeat
+    - name: Install elasticsearch
       apt:
-        deb: /home/dokukin/filebeat-7.14.1-amd64.deb
+        deb: /home/elasticsearch-7.14.1-amd64.deb
 
-    - name: Copy config file for filebeat
+    - name: Copy config file for elasticsearch
       copy:
-        src: ./elasticsearch_files/filebeat.yml
-        dest: /etc/filebeat
-        mode: 0600
+        src: ./elasticsearch_files/elasticsearch.yml
+        dest: /etc/elasticsearch
+        mode: 0660
         owner: root
-        group: root
+        group: elasticsearch
 
     - name: Systemctl daemon reload
       systemd:
         daemon_reload: true
-        name: filebeat.service
+        name: elasticsearch.service
         state: started
 
-    - name: restarted nginx
-      service:
-        name: nginx
+    - name: Systemctl enable elasticsearch
+      systemd:
+        name: elasticsearch.service
         state: restarted
-
-    - name: restarted filebeat
-      service:
-        name: filebeat.service
-        state: restarted
-
-    - name: Systemctl enable filebeat
-      ansible.builtin.service:
-        name: filebeat.service
-        enabled: yes

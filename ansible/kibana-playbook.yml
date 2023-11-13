@@ -18,11 +18,11 @@
     - name: Copy kibana 7.14.1
       copy:
         src: ./elasticsearch_files/kibana-7.14.1-amd64.deb
-        dest: /home/dokukin/
+        dest: /home/
 
     - name: Install kibana
       apt:
-        deb: /home/dokukin/kibana-7.14.1-amd64.deb
+        deb: /home/kibana-7.14.1-amd64.deb
 
     - name: Systemctl daemon reload
       systemd:

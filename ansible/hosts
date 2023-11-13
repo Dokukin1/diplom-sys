@@ -1,44 +1,44 @@
 [web_servers]
-nginxserver1 ansible_host=10.1.0.10  ansible_ssh_private_key_file=/home/.ssh/id_ed25519.pub ansible_user=dokukin ansible_python_interpreter=/usr/bin/python3
-nginxserver2 ansible_host=10.2.0.10  ansible_ssh_private_key_file=/home/.ssh/id_ed25519.pub ansible_user=dokukin ansible_python_interpreter=/usr/bin/python3
+web-1 ansible_host=10.1.0.10  ansible_ssh_private_key_file=/home/dokukin/id_rsa.pub ansible_user=terraform ansible_python_interpreter=/usr/bin/python3
+web-2 ansible_host=10.2.0.10  ansible_ssh_private_key_file=/home/dokukin/id_rsa.pub ansible_user=terraform ansible_python_interpreter=/usr/bin/python3
 
 [zabbix]
-zabbix ansible_host=10.4.0.20  ansible_ssh_private_key_file=/home/.ssh/id_ed25519.pub ansible_user=dokukin ansible_python_interpreter=/usr/bin/python3
+zabbix ansible_host=10.4.0.20  ansible_ssh_private_key_file=/home/dokukin/id_rsa.pub ansible_user=terraform ansible_python_interpreter=/usr/bin/python3
 
 
 [elasticsearch]
-elastic ansible_host=10.3.0.100  ansible_ssh_private_key_file=/home/.ssh/id_ed25519.pub ansible_user=dokukin ansible_python_interpreter=/usr/bin/python3
+elasticsearch ansible_host=10.3.0.100  ansible_ssh_private_key_file=/home/dokukin/id_rsa.pub ansible_user=terraform ansible_python_interpreter=/usr/bin/python3
 
 [kibana]
-kibana ansible_host=10.4.0.100  ansible_ssh_private_key_file=/home/.ssh/id_ed25519.pub ansible_user=dokukin ansible_python_interpreter=/usr/bin/python3
+kibana ansible_host=10.4.0.100  ansible_ssh_private_key_file=/home/dokukin/id_rsa.pub ansible_user=terraform ansible_python_interpreter=/usr/bin/python3
 
 [bastion]
-bastion  ansible_host=158.160.46.24 ansible_ssh_user=dokukin
+bastion  ansible_host=51.250.35.120 ansible_ssh_user=terraform
 
 
 [web_servers:vars]
 
-ansible_ssh_user=dokukin
+ansible_ssh_user=terraform
 
-ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q -i /home/.ssh/id_ed25519.pub dokukin@158.160.46.24"' 
+ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q -i /home/dokukin/id_rsa.pub terraform@51.250.35.120"' 
 
 
 [zabbix:vars]
 
-ansible_ssh_user=dokukin
+ansible_ssh_user=terraform
 
-ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q -i /home/.ssh/id_ed25519.pub grishenkovnn@158.160.46.24"' 
+ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q -i /home/dokukin/id_rsa.pub terraform@51.250.35.120"' 
 
 
 [elasticsearch:vars]
 
-ansible_ssh_user=dokukin
+ansible_ssh_user=terraform
 
-ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q -i /home/.ssh/id_ed25519.pub grishenkovnn@158.160.46.24"' 
+ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q -i /home/dokukin/id_rsa.pub terraform@51.250.35.120"' 
 
 
 [kibana:vars]
 
-ansible_ssh_user=dokukin
+ansible_ssh_user=terraform
 
-ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q -i /home/.ssh/id_ed25519.pub grishenkovnn@158.160.46.24"' 
+ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q -i /home/dokukin/id_rsa.pub terraform@51.250.35.120"' 

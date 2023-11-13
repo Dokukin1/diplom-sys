@@ -16,7 +16,7 @@
 
     - name: copy index_new.html
       ansible.builtin.copy:
-        src: /home/dokukin/sys-diplom/Ansible/index.html
+        src: /home/ansible/index.html
         dest: /var/www/html/index.html
         owner: root
         group: sudo

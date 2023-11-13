@@ -2,7 +2,7 @@
 - hosts: zabbix
   become: true
   vars:
-    - password_db: dokukin
+    - password_db: terraform
   tasks:
     - name: install packages
       become: true

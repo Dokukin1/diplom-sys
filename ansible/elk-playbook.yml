@@ -18,11 +18,11 @@
     - name: Copy elasticsearch 7.14.1
       copy:
         src: ./elasticsearch_files/elasticsearch-7.14.1-amd64.deb
-        dest: /home/dokukin/
+        dest: /home/grishenkovnn/
 
     - name: Install elasticsearch
       apt:
-        deb: /home/dokukin/elasticsearch-7.14.1-amd64.deb
+        deb: /home/grishenkovnn/elasticsearch-7.14.1-amd64.deb
 
     - name: Copy config file for elasticsearch
       copy:
