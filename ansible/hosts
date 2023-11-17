@@ -1,16 +1,16 @@
 [web_servers]
-web-1 ansible_host=10.1.0.10  ansible_ssh_private_key_file=/home/dokukin/id_rsa.pub ansible_user=terraform ansible_python_interpreter=/usr/bin/python3
-web-2 ansible_host=10.2.0.10  ansible_ssh_private_key_file=/home/dokukin/id_rsa.pub ansible_user=terraform ansible_python_interpreter=/usr/bin/python3
+web-1 ansible_host= "fdqn"  ansible_ssh_private_key_file=/home/dokukin/id_rsa.pub ansible_user=terraform ansible_python_interpreter=/usr/bin/python3
+web-2 ansible_host= "fdqn"  ansible_ssh_private_key_file=/home/dokukin/id_rsa.pub ansible_user=terraform ansible_python_interpreter=/usr/bin/python3
 
 [zabbix]
-zabbix ansible_host=10.4.0.20  ansible_ssh_private_key_file=/home/dokukin/id_rsa.pub ansible_user=terraform ansible_python_interpreter=/usr/bin/python3
+zabbix ansible_host= "fdqn"  ansible_ssh_private_key_file=/home/dokukin/id_rsa.pub ansible_user=terraform ansible_python_interpreter=/usr/bin/python3
 
 
 [elasticsearch]
-elasticsearch ansible_host=10.3.0.100  ansible_ssh_private_key_file=/home/dokukin/id_rsa.pub ansible_user=terraform ansible_python_interpreter=/usr/bin/python3
+elasticsearch ansible_host= "fdqn"  ansible_ssh_private_key_file=/home/dokukin/id_rsa.pub ansible_user=terraform ansible_python_interpreter=/usr/bin/python3
 
 [kibana]
-kibana ansible_host=10.4.0.100  ansible_ssh_private_key_file=/home/dokukin/id_rsa.pub ansible_user=terraform ansible_python_interpreter=/usr/bin/python3
+kibana ansible_host= "fdqn"  ansible_ssh_private_key_file=/home/dokukin/id_rsa.pub ansible_user=terraform ansible_python_interpreter=/usr/bin/python3
 
 [bastion]
 bastion  ansible_host=51.250.35.120 ansible_ssh_user=terraform
