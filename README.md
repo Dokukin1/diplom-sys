@@ -32,13 +32,13 @@
 
 Создал инфраструктуру из 6 ВМ по общему заданию + 1 вм для Terraform и Ansible. web-1 и web-2 помещены в разные зоны. Сервера Web,Elasticsearh помещены в приватные подсети.Сервера Zabbix, Kibana, application load balancer помещены в публичную подсеть.
 
-![img](img/1.PNG)
+![img](https://github.com/Dokukin1/diplom-sys/blob/main/IMG/1.png)
 
 Установлен Nginx
 
-![img](img/1.1.PNG)
+![img](https://github.com/Dokukin1/diplom-sys/blob/main/IMG/2.png)
 
-![img](img/1.2.PNG)
+![img](https://github.com/Dokukin1/diplom-sys/blob/main/IMG/3.png)
 
 *****************************************************************************************************************
 
@@ -46,31 +46,31 @@
 
 Создайте [Target Group](https://cloud.yandex.com/docs/application-load-balancer/concepts/target-group), включите в неё две созданных ВМ.
 
-![img](img/1.3.PNG)
+![img](https://github.com/Dokukin1/diplom-sys/blob/main/IMG/4.png)
 
 Создайте [Backend Group](https://cloud.yandex.com/docs/application-load-balancer/concepts/backend-group), настройте backends на target group, ранее созданную. Настройте healthcheck на корень (/) и порт 80, протокол HTTP.
 
-![img](img/1.4.PNG)
+![img](https://github.com/Dokukin1/diplom-sys/blob/main/IMG/5.png)
 
 Создайте [HTTP router](https://cloud.yandex.com/docs/application-load-balancer/concepts/http-router). Путь укажите — /, backend group — созданную ранее.
 
-![img](img/1.5.PNG)
+![img](https://github.com/Dokukin1/diplom-sys/blob/main/IMG/6.png)
 
 Создайте [Application load balancer](https://cloud.yandex.com/en/docs/application-load-balancer/) для распределения трафика на веб-сервера, созданные ранее. Укажите HTTP router, созданный ранее, задайте listener тип auto, порт 80.
 
-![img](img/1.6.PNG)
+![img](https://github.com/Dokukin1/diplom-sys/blob/main/IMG/7.png)
 
 Протестируйте сайт
-`curl -v 158.160.57.233:80` 
+`curl -v 51.250.39.69:80` 
 
-![img](img/1.7.PNG)
+![img](https://github.com/Dokukin1/diplom-sys/blob/main/IMG/8.png)
 
 ### Мониторинг
 Создайте ВМ, разверните на ней Zabbix. На каждую ВМ установите Zabbix Agent, настройте агенты на отправление метрик в Zabbix. 
 
-![img](img/1.8.PNG)
+![img](https://github.com/Dokukin1/diplom-sys/blob/main/IMG/9.png)
 
-[http://51.250.34.93:8080/](http://51.250.34.93:8080/)
+[http://51.250.33.62:8080/](http://51.250.33.62:8080/)
 
 login: Admin
 
@@ -78,7 +78,7 @@ Pass: zabbix
 
 Настройте дешборды с отображением метрик, минимальный набор — по принципу USE (Utilization, Saturation, Errors) для CPU, RAM, диски, сеть, http запросов к веб-серверам. Добавьте необходимые tresholds на соответствующие графики.
 
-![img](img/1.9.PNG)
+![img](https://github.com/Dokukin1/diplom-sys/blob/main/IMG/10.png)
 
 ### Логи
 Cоздайте ВМ, разверните на ней Elasticsearch. Установите filebeat в ВМ к веб-серверам, настройте на отправку access.log, error.log nginx в Elasticsearch.
