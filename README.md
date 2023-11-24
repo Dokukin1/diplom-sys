@@ -136,7 +136,7 @@ sudo nano /etc/kibana/kibana.yml
 
 Вставляем адрес elasticsearch
     
-http://84.201.174.161:5601
+http://84.201.174.16:5601
 
 ![img](https://github.com/Dokukin1/diplom-sys/blob/main/IMG/12.png)
 
