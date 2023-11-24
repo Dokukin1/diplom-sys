@@ -87,7 +87,7 @@ Cоздайте ВМ, разверните на ней Elasticsearch. Устан
 
 Создаю VM elasticsearch:
 
-![img](img/1.10.PNG)
+![img](https://github.com/Dokukin1/diplom-sys/blob/main/IMG/11.png)
 
 На web1 и web2 установлены filebeat.Заходим поочередно на сервера и настраиваем конфиг файл на отправку логов.
 
@@ -95,10 +95,10 @@ Cоздайте ВМ, разверните на ней Elasticsearch. Устан
 Пример доступа к web-1 и web-2
 
 ```
-ssh grishenkovnn@10.1.0.10
+ssh dokukin@10.1.0.10
 ```
 ```
-ssh grishenkovnn@10.2.0.10 
+ssh dokukin@10.2.0.10 
 ```
 
 ```
@@ -126,10 +126,6 @@ sudo filebeat -e
 ```
 ******************************************************************************************************
 
-![img](img/1.11.PNG)
-
-![img](img/1.12.PNG)
-
 Создайте ВМ, разверните на ней Kibana, сконфигурируйте соединение с Elasticsearch.
 
 Заходим на сервер Kibana,и настраиваем конфиг для подключени к elasticsearch.
@@ -140,37 +136,37 @@ sudo nano /etc/kibana/kibana.yml
 
 Вставляем адрес elasticsearch
     
-[http://51.250.47.37:5601/](http://51.250.47.37:5601/)
+http://84.201.174.161:5601
 
-![img](img/1.13.PNG)
+![img](https://github.com/Dokukin1/diplom-sys/blob/main/IMG/12.png)
 
-![img](img/1.14.PNG)
+![img](https://github.com/Dokukin1/diplom-sys/blob/main/IMG/13.png)
 
 
 ### Сеть
 Разверните один VPC. Сервера web, Elasticsearch поместите в приватные подсети. Сервера Zabbix, Kibana, application load balancer определите в публичную подсеть.
 
-![img](img/1.15.PNG)
+![img](https://github.com/Dokukin1/diplom-sys/blob/main/IMG/14.png)
 
 Настройте [Security Groups](https://cloud.yandex.com/docs/vpc/concepts/security-groups) соответствующих сервисов на входящий трафик только к нужным портам.
 
 Настройте ВМ с публичным адресом, в которой будет открыт только один порт — ssh. Настройте все security groups на разрешение входящего ssh из этой security group. Эта вм будет реализовывать концепцию bastion host. Потом можно будет подключаться по ssh ко всем хостам через этот хост.
 
-![img](img/1.16.PNG)
+![img](https://github.com/Dokukin1/diplom-sys/blob/main/IMG/15.png)
 
-![img](img/1.17.PNG)
+![img](https://github.com/Dokukin1/diplom-sys/blob/main/IMG/16.png)
 
 В файле hosts пропысываем правило для подключения к хостам через bastion
 
-![img](img/1.18.PNG)
+![img](https://github.com/Dokukin1/diplom-sys/blob/main/IMG/17.png)
 
 
 ### Резервное копирование
 Создайте snapshot дисков всех ВМ. Ограничьте время жизни snaphot в неделю. Сами snaphot настройте на ежедневное копирование.
 
-![img](img/1.19.PNG)
+![img](https://github.com/Dokukin1/diplom-sys/blob/main/IMG/18.png)
 
-![img](img/1.20.PNG)
+![img](https://github.com/Dokukin1/diplom-sys/blob/main/IMG/19.png)
 
 
 ### Дополнительно
