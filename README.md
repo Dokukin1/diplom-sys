@@ -70,7 +70,7 @@
 
 ![img](https://github.com/Dokukin1/diplom-sys/blob/main/IMG/9.png)
 
-[http://51.250.33.62:8080/](http://51.250.33.62:8080/)
+[http://51.250.35.169:8080/](http://51.250.35.169:8080/)
 
 login: Admin
 
